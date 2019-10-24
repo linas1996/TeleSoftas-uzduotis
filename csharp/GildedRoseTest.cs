@@ -12,7 +12,7 @@ namespace csharp
             IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
-            Assert.AreNotEqual("fixme", Items[0].Name); // negali buti vienodi
+            Assert.AreNotEqual("fixme", Items[0].Name); // turi buti nevienodi
         }
         [Test]
         public void foo1()
