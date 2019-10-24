@@ -9,10 +9,20 @@ namespace csharp
         [Test]
         public void foo()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
-            Assert.AreEqual("fixme", Items[0].Name);
+            Assert.AreNotEqual("fixme", Items[0].Name); // negali buti vienodi
+        }
+        [Test]
+        public void foo1()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual("Conjured Mana Cake", Items[0].Name); // privalo buti vienodi
+            Assert.AreEqual(2, Items[0].SellIn); // privalo buti vienu maziau nei pradine
+            Assert.AreEqual(5, Items[0].Quality); // privalo buti vienu maziau nei pradine
         }
     }
 }
